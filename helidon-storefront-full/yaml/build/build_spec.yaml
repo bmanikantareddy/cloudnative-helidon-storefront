@@ -78,7 +78,8 @@ steps:
       echo $JAVA_HOME
       cd ${OCI_PRIMARY_SOURCE_DIR}
       echo Extracting export variables - Working in `pwd`
-      export STOREFRONT_VERSION=`grep "VERSION = " helidon-storefront-full/src/main/java/com/oracle/labs/helidon/storefront/resources/StatusResource.java  | awk '{print $7}' | sed -e 's/"//g' -e s'/;//'`
+      #export STOREFRONT_VERSION=`grep "VERSION = " helidon-storefront-full/src/main/java/com/oracle/labs/helidon/storefront/resources/StatusResource.java  | awk '{print $7}' | sed -e 's/"//g' -e s'/;//'`
+      export STOREFRONT_VERSION="${APP_VERSION}"
       echo "STOREFRONT_VERSION: " $STOREFRONT_VERSION
       echo transferring the OCIR_HOST and OCIR_STORAGE_NAMESPACE vault variables
       export OCIR_HOST=$OCIR_HOST_VAULT
