@@ -164,6 +164,23 @@ steps:
       docker build  --tag storefront:latest --file Dockerfile . 
       echo images are
       docker images
+  - type: Command
+    name: "image signing"
+    timeoutInSeconds: 60
+    command: |
+      oci artifacts container image list --compartment-id ocid1.tenancy.oc1..aaaaaaaa2tnyd7nax7ge5ix4ynnl54r3mtnmdebmoncsrnarimmf4h3nm2na --repository-name storefrontdevops/storefront
+
+  - type: Command
+    name: "testing cluster connectivity"
+    timeoutInSeconds: 60
+    command: |
+      oci artifacts container image list --compartment-id ocid1.tenancy.oc1..aaaaaaaa2tnyd7nax7ge5ix4ynnl54r3mtnmdebmoncsrnarimmf4h3nm2na --repository-name storefrontdevops/storefront
+      oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.iad.aaaaaaaa36u4575wlbzivjm4hmn3ek7rwlosq7ioztincqv2mcoy36bdbqva --file $HOME/.kube/config --region us-ashburn-1 --token-version 2.0.0  --kube-endpoint PUBLIC_ENDPOINT
+      kubectl version
+      kubectl get ns
+
+
+      
      
      
 # This basically preserves and "names" the artifacts below (if it's not here it gets junked) so the deliver artifact stage can handle them
