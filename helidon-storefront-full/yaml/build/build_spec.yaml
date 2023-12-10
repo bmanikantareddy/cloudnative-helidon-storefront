@@ -169,15 +169,15 @@ steps:
     timeoutInSeconds: 60
     command: |
       oci artifacts container image list --compartment-id ocid1.tenancy.oc1..aaaaaaaa2tnyd7nax7ge5ix4ynnl54r3mtnmdebmoncsrnarimmf4h3nm2na --repository-name storefrontdevops/storefront
-  - type: Command
-    timeoutInSeconds: 60
-    name: Install kubectl
-    command: |
-      cd ~/InstalledSoftware
-      curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-      export PATH=~/InstalledSoftware:$PATH
-      which kubectl
-      kubectl version --client
+  # - type: Command
+  #   timeoutInSeconds: 60
+  #   name: Install kubectl
+  #   command: |
+  #     cd ~/InstalledSoftware
+  #     curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+  #     export PATH=~/InstalledSoftware:$PATH
+  #     which kubectl
+  #     kubectl version --client
 
   - type: Command
     name: "testing cluster connectivity"
@@ -185,8 +185,8 @@ steps:
     command: |
       oci artifacts container image list --compartment-id ocid1.tenancy.oc1..aaaaaaaa2tnyd7nax7ge5ix4ynnl54r3mtnmdebmoncsrnarimmf4h3nm2na --repository-name storefrontdevops/storefront
       oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.iad.aaaaaaaa36u4575wlbzivjm4hmn3ek7rwlosq7ioztincqv2mcoy36bdbqva --file $HOME/.kube/config --region us-ashburn-1 --token-version 2.0.0  --kube-endpoint PUBLIC_ENDPOINT
-      kubectl version
-      kubectl get ns
+      # kubectl version
+      # kubectl get ns
       oci docker login us-ashburn-1.ocir.io
       docker pull us-ashburn-1.ocir.io/idqvnh1tmejw/alpine:3.18.2
       docker tag storefront:latest us-ashburn-1.ocir.io/idqvnh1tmejw/storefront:9.9.9
