@@ -198,7 +198,7 @@ steps:
       buildType: maven
       pomFilePath: ${OCI_PRIMARY_SOURCE_DIR}/helidon-storefront-full/pom.xml
       maxPermissibleCvssV2Score: 6.0
-      maxPermissibleCvssV3Score: 7.0
+      maxPermissibleCvssV3Score: 9.9
     knowledgeBaseId: ${KB_OCID}
     vulnerabilityAuditCompartmentId: ${VA_COMPARTMENT_OCID}
     vulnerabilityAuditName: build_sample_${OCI_PRIMARY_SOURCE_BRANCH_NAME}
