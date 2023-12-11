@@ -187,7 +187,7 @@ steps:
       oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.iad.aaaaaaaa36u4575wlbzivjm4hmn3ek7rwlosq7ioztincqv2mcoy36bdbqva --file $HOME/.kube/config --region us-ashburn-1 --token-version 2.0.0  --kube-endpoint PUBLIC_ENDPOINT
       # kubectl version
       # kubectl get ns
-      oci docker login us-ashburn-1.ocir.io
+      # oci docker login us-ashburn-1.ocir.io
       # docker pull us-ashburn-1.ocir.io/idqvnh1tmejw/alpine:3.18.2
       # docker tag storefront:latest us-ashburn-1.ocir.io/idqvnh1tmejw/storefront:9.9.9
       # docker push us-ashburn-1.ocir.io/idqvnh1tmejw/storefront:9.9.9
