@@ -168,7 +168,7 @@ steps:
     name: "image signing"
     timeoutInSeconds: 60
     command: |
-      oci artifacts container image list --compartment-id ocid1.tenancy.oc1..aaaaaaaa2tnyd7nax7ge5ix4ynnl54r3mtnmdebmoncsrnarimmf4h3nm2na --repository-name storefrontdevops/storefront
+      oci artifacts container image list --compartment-id ocid1.compartment.oc1..aaaaaaaabdxech4xvyf32fx5toefcpvag3adpjnszbp23e3wf7z2e4lep72a --repository-name storefrontdevops/storefront
   # - type: Command
   #   timeoutInSeconds: 60
   #   name: Install kubectl
