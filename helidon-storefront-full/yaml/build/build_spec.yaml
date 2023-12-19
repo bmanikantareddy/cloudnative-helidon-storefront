@@ -179,12 +179,12 @@ steps:
   #     which kubectl
   #     kubectl version --client
 
-  - type: Command
-    name: "testing cluster connectivity"
-    timeoutInSeconds: 60
-    command: |
-      oci artifacts container image list --compartment-id ocid1.tenancy.oc1..aaaaaaaa2tnyd7nax7ge5ix4ynnl54r3mtnmdebmoncsrnarimmf4h3nm2na --repository-name storefrontdevops/storefront
-      oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.iad.aaaaaaaabi7sqhorcnd5kef6dszeh43xnzpo6o5uzagi5to3kceuu6de6f2q --file $HOME/.kube/config --region us-ashburn-1 --token-version 2.0.0  --kube-endpoint PUBLIC_ENDPOINT
+  # - type: Command
+  #   name: "testing cluster connectivity"
+  #   timeoutInSeconds: 60
+  #   command: |
+  #     oci artifacts container image list --compartment-id ocid1.tenancy.oc1..aaaaaaaa2tnyd7nax7ge5ix4ynnl54r3mtnmdebmoncsrnarimmf4h3nm2na --repository-name storefrontdevops/storefront
+  #     oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.iad.aaaaaaaabi7sqhorcnd5kef6dszeh43xnzpo6o5uzagi5to3kceuu6de6f2q --file $HOME/.kube/config --region us-ashburn-1 --token-version 2.0.0  --kube-endpoint PUBLIC_ENDPOINT
       # kubectl version
       # kubectl get ns
       # oci docker login us-ashburn-1.ocir.io
